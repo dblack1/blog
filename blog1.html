@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Blog 1</title>
+	</head>
+	<body>
+
+		<h1>Blog 1: HTML Best Practices</h1>
+
+		<p>
+			For my articles, I decided to investigate some best practices with HTML.
+			A common theme that I found was to maintatin consistency within your code.
+			Whether it be closing self closing tags or with your naming conventions, you should
+			be consistent. Another common practice that I found was to not use inline CSS.
+			Finally, I found a common best practice to be ensuring that your site is accessible
+			to all users. This could be done using the <code>alt</code> tag or with the <code>aria</code>
+			attribute.
+		</p>
+
+		<p>
+			The articles that I read also metioned to ensure that you are using title and meta tags correctly for SEO optimization. 
+			One interesting best practice that I found was to put your <code>script</code> elements at 
+			the bottom of your file. This will allow the page to load faster because it will parse the HTML first
+			and save the Javascript for last. Another method to do this would be to use the <code>defer</code> or
+			<code>async</code> attribute. These can be implemented like this: 
+		</p>
+
+		<code> &lt;script async&gt;&lt;/script&gt;</code>
+		<p> or </p>
+		<code> &lt;script defer&gt;&lt;/script&gt;</code>
+
+		<p>
+			Using <code>async</code> will pause HTML during the script execution only and using <code>defer</code> will pause
+			script execution until the HTML has finished parsing. Here are the links to the articles that I read: 
+		</p>
+		<a href="https://medium.com/swlh/10-best-practices-for-html-542fb923b93">10 Best practices for HTMl</a>
+		<a href="https://medium.com/oceanize-geeks/15-html-best-practices-that-developers-should-know-cb02473d293f">15 HTML Best Practices that Developers Should Know</a>
+	</body>		
+</html>
