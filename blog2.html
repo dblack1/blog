@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog 2</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <h1>Blog 2: Javascript Asynchronous Functions: Async and Await</h1>
+
+    <p>
+      For my second blog post, I decided to look into asynchronous programming
+      in Javascript. I have used asynchronous functions in Javascript before,
+      but I never completely understood what they did or how they worked.
+      Javascript is a single-threaded programming language. This means that only
+      one thing can happen at a time. This can make programming simple, but it
+      also can create a problem if you are making a request to an API that takes
+      a long time. Your webpage might be left unresponsive for a while because
+      the main thread is being taken up by the API call. Asynchronous
+      programming can help minimize this problem.
+    </p>
+
+    <p>
+      One of the easiest ways to use asynchronous programming in Javascript is
+      by using <code>aysnc</code> and <code>await</code> in your functions. Here
+      is an example of an async function in Javascript:
+    </p>
+
+    <pre>
+      <code>
+        async function f() {
+          return 1;
+        }
+      </code>
+    </pre>
+
+    <p>
+      Placing <code>async</code> in front of a function means that the function
+      will always return a promise. It also means that you can use
+      <code>await</code> inside of that function. <code>await</code> is another
+      part of asynchronous programming that will make Javascript wait until a
+      promise that is placed after <code>await</code> resolves. Here is an
+      example using <code>await</code>:
+    </p>
+
+    <pre>
+      <code>
+        async function f() {
+
+          let promise = new Promise((resolve, reject) => {
+            setTimeout(() => resolve("done!"), 1000)
+          });
+
+          let result = await promise; // wait until the promise resolves (*)
+
+          alert(result); // "done!"
+        }
+
+        f();
+      </code>
+    </pre>
+
+    <p>
+      One of the main benefits of using <code>await</code> is that it allows the
+      program to do other things while waiting for the promise to resolve. Some
+      of these things could be like handling user input or running scripts.
+      Using <code>async/await</code> would help us solve our inital problem.
+    </p>
+
+    <p>References:</p>
+    <a href="https://javascript.info/async-await">Code examples from here</a>
+    <br />
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await"
+    >
+      More info
+    </a>
+  </body>
+</html>
