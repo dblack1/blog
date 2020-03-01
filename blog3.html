@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog 3</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <h1 id="h1-animation">Blog 3: CSS Animations</h1>
+
+    <p>
+      For my third blog post, I will be writing about CSS animations. CSS
+      animations can be used to change the styling of an element without using
+      Javascript. With CSS animations, you can change any CSS property you want.
+      Animations are commonly used for changing colors or making something grow
+      or shrink, but they can do more complex things like make elements move
+      across a page. To use CSS animations, you have to specify keyframes that
+      determine what styles an element will have at certain times. Here is an
+      example of a keyframe that will changes the color of the
+      <code>h1</code> tag on this page:
+    </p>
+
+    <pre>
+      <code>
+        @keyframes example {
+          from { color: blue; }
+          to { color: red; }
+        }
+
+        #h1-animation {
+          color: red;
+          animation-name: example;
+          animation-duration: 4s;
+        }
+      </code>
+    </pre>
+
+    <p>
+      In this example, we set up a keyframe that will start the element's color
+      at blue and end the element's color at red. Then in
+      <code>#h1-animation</code>, we specify that we want the
+      <code>example</code> keyframe to be applied by using the
+      <code>animation-name</code> property. Finally, we say that the animation
+      should take 4s to complete by using the
+      <code>animation-duration</code> property. Here is a more complex
+      animation:
+    </p>
+
+    <div id="box"></div>
+
+    <p>The code for this animation is as follows:</p>
+
+    <pre>
+      <code>
+        @keyframes example2 {
+          0% { background-color: red; left: 0%; }
+          25% { background-color: yellow; left: 25%; }
+          50% { background-color: blue; left: 50%; }
+          75% { background-color: green; left: 75%; }
+          100% { background-color: red; left: 100%; }
+        }
+
+        #box {
+          width: 100px;
+          height: 100px;
+          background-color: red;
+          position: relative;
+          animation-name: example2;
+          animation-duration: 4s;
+          animation-iteration-count: infinite;
+        }
+      </code>
+    </pre>
+    <p>
+      In this example, we are more specific with the stages of the animation.
+      Properties for the animation are set when the animation is 0% finished,
+      25% finished, 50% finished, 75% finished, and 100% finished. This example
+      uses background color as well as positioning to move the item. Finally,
+      the animation does not stop because
+      <code>animation-iteration-count</code> is set to infinite. If you only
+      wanted the animation to run twice, you could set this property to 2.
+    </p>
+
+    <p>References:</p>
+    <a href="https://www.w3schools.com/css/css3_animations.asp" target="_blank">
+      W3 Schools
+    </a>
+    <br />
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations"
+      target="_blank"
+    >
+      Documentation
+    </a>
+  </body>
+</html>

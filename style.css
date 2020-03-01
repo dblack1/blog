@@ -5,3 +5,51 @@ pre code {
   padding: 0px;
   width: 50%;
 }
+
+@keyframes example {
+  from {
+    color: blue;
+  }
+  to {
+    color: red;
+  }
+}
+
+#h1-animation {
+  color: red;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+@keyframes example2 {
+  0% {
+    background-color: red;
+    left: 0%;
+  }
+  25% {
+    background-color: yellow;
+    left: 25%;
+  }
+  50% {
+    background-color: blue;
+    left: 50%;
+  }
+  75% {
+    background-color: green;
+    left: 75%;
+  }
+  100% {
+    background-color: red;
+    left: 100%;
+  }
+}
+
+#box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative;
+  animation-name: example2;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
