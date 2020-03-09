@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog 4</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <!--Nav bar -->
+    <nav>
+      <!-- Hamburger symbol -->
+      <label for="hamburger">&#9776;</label>
+      <input type="checkbox" id="hamburger" />
+
+      <!-- Nav items -->
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Products</li>
+        <li>Testimonials</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+
+    <h1 id="h1-animation">Blog 4: How to make a hamburger NavBar</h1>
+
+    <p>
+      For my fourth blog post, I looked at how to make a hamburger navbar. A
+      hamburger navbar is a responsive navbar that will display items by the
+      click of a button when the screen reaches a small size. Hamburger navbars
+      are useful for mobile websites. I will be demonstrating how to create the
+      navbar at the top of this page. Let's start with the HTML:
+    </p>
+
+    <pre>
+      <code>
+        &lt;!--Nav bar --&gt;
+        &lt;nav&gt;
+          &lt;!-- Hamburger symbol --&gt;
+          &lt;label for="hamburger">&#9776;&lt;/label&gt;
+          &lt;input type="checkbox" id="hamburger"/&gt;
+
+          &lt;!-- Nav items --&gt;
+          &lt;ul&gt;
+            &lt;li&gt;Home&lt;/li&gt;
+            &lt;li&gt;About&lt;/li&gt;
+            &lt;li&gt;Products&lt;/li&gt;
+            &lt;li&gt;Testimonials&lt;/li&gt;
+            &lt;li&gt;Contact&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/nav&gt;
+      </code>
+    </pre>
+
+    <p>
+      This html sets up a basic navbar. The <code>label</code> and
+      <code>input</code> elements will be used to display the hamburger icon
+      when the screen is small. Now for the CSS. First we will look at the CSS
+      for large screens:
+    </p>
+
+    <pre>
+      <code>
+        /* Large screens*/
+        /* Wrapper */
+        nav {
+          width: 100%;
+          background: #000;
+        }
+
+        /* Hide Hamburger */
+        nav label, #hamburger {
+          display: none;
+        }
+
+        /* Menu Items */
+        nav ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+        }
+        nav ul li {
+          display: inline-block;
+          padding: 10px;
+          box-sizing: border-box;
+          color: white;
+        }
+      </code>
+    </pre>
+
+    <p>
+      First, we set the width of the <code>nav</code> to 100% and set its
+      background color. Then we hide the <code>label</code> and
+      <code>#hamburger</code> elements so they don't appear on large screens.
+      Next, we add some styling to the <code>ul</code> element. Finally, we make
+      the nav items display as inline block elements and add some padding to
+      them. Now let's look at the css for small screens.
+    </p>
+
+    <pre>
+      <code>
+        /* Small screens */
+        @media screen and (max-width: 768px){
+          /* Show Hamburger */
+          nav label {
+            display: inline-block;
+            color: #fff;
+            background: #a02620;
+            font-style: normal;
+            font-size: 1.2em;
+            padding: 10px;
+          }
+
+          /* Make menu items vertical */
+          nav ul li {
+            display: block;
+          }
+          nav ul li {
+            border-top: 1px solid #333;
+          }
+
+          /* Toggle show/hide menu on checkbox click */
+          nav ul {
+            display: none;
+          }
+          nav input:checked ~ ul {
+            display: block;
+          }
+        }
+      </code>
+    </pre>
+
+    <p>
+      In this CSS, we use a media query so these styles are only applied when
+      the screen is less than 768 pixels. First, we display the hamburger button
+      by setting the <code>label</code> element's display to inline block and
+      styling it. Next, we make the nav items display vertically by setting
+      their display to block and giving them a border on the top. Then, we hide
+      the <code>ul</code> element by setting its display to none. Finally, we
+      say that if the <code>input</code> element is checked then the ul should
+      be displayed. This is basically saying that when the user checks the
+      hamburger icon the navbar should be displayed and when they uncheck the
+      hamburger icon it should not be displayed.
+    </p>
+
+    <p>References:</p>
+    <a
+      href="https://code-boxx.com/simple-responsive-pure-css-hamburger-menu/"
+      target="_blank"
+    >
+      Tutorial
+    </a>
+  </body>
+</html>
