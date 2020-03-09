@@ -1,0 +1,62 @@
+pre code {
+  background-color: #eee;
+  border: 1px solid #999;
+  display: block;
+  padding: 0px;
+  width: 50%;
+}
+
+/* Large screens*/
+/* Wrapper */
+nav {
+  width: 100%;
+  background: #000;
+}
+
+/* Hide Hamburger */
+nav label,
+#hamburger {
+  display: none;
+}
+
+/* Menu Items */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  display: inline-block;
+  padding: 10px;
+  box-sizing: border-box;
+  color: white;
+}
+
+/* Small screens */
+@media screen and (max-width: 768px) {
+  /* Show Hamburger */
+  nav label {
+    display: inline-block;
+    color: #fff;
+    background: #a02620;
+    font-style: normal;
+    font-size: 1.2em;
+    padding: 10px;
+  }
+
+  /* Make menu items vertical */
+  nav ul li {
+    display: block;
+  }
+  nav ul li {
+    border-top: 1px solid #333;
+  }
+
+  /* Toggle show/hide menu on checkbox click */
+  nav ul {
+    display: none;
+  }
+  nav input:checked ~ ul {
+    display: block;
+  }
+}
