@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog 5</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <h1>Blog 5: Javascript Error Handling</h1>
+
+    <p>
+      For my fifth blog post, I will be looking into error handling in
+      Javascript. Just like many programming languages, Javascript allows its
+      developers to make use of error handling. Normally, if there was an error
+      in a script, the script would just stop and print the error to the
+      console. By using a try catch block, Javascript allows us to handle the
+      error and do something other than print it to the console. This is the
+      basic syntax for using a try catch block:
+    </p>
+
+    <pre>
+      <code>
+        try {
+
+          // code...
+
+        } catch (err) {
+
+          // error handling
+
+        }
+      </code>
+    </pre>
+
+    <p>
+      In this case, the code that is in the try block would get executed. If
+      there were no errors, the catch block would be ignored. If there were
+      errors, the control flow would go to the beginning of the catch block. The
+      try catch block will only work for runtime errors. The catch block takes
+      in a variable, in this case <code>err</code>, that is an error object.
+      This error object contains 3 main properties that give information on what
+      went wrong. The first property is the <code>name</code> property that
+      contains the error name. The second property is the
+      <code>message</code> property that contains textual information on the
+      error. The third property is the <code>stack</code> property which
+      contains information on the sequence of calls that lead to the error. Here
+      is an example of using the <code>err</code> properties:
+    </p>
+
+    <pre>
+      <code>
+        try {
+          causeError; // error, variable is not defined!
+        } catch(err) {
+          console.log(err.name); // ReferenceError
+          console.log(err.message); // causeError is not defined
+          // ReferenceError: causeError is not defined at (...call stack)
+          console.log(err.stack);
+
+          // Can also show an error as a whole
+          // The error is converted to string as "name: message"
+          console.log(err); // ReferenceError: lalala is not defined
+        }
+      </code>
+    </pre>
+
+    <p>References:</p>
+    <a href="https://javascript.info/try-catch" target="_blank">
+      Modern Javascript
+    </a>
+  </body>
+</html>
